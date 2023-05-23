@@ -2,11 +2,20 @@
 
 <%@tasks.each do |task|%>
   <div>
-    <h2><%=task.title%></h2>
-    <p><%=task.details%></p>
+    <h2><%= link_to task.title, target_path(task) %></h2>
     <div>
       <input type="checkbox" <%=task.completed ? "checked" : ""%>>
       <label>Fait</label>
     </div>
   </div>
 <%end%>
+
+
+<%# def task_path(task)
+  '/tasks/:id'
+end %>
+
+<%# <a href="/tasks/1">le titre</a> %>
+
+<%# link_to ce_sur_quoi_tu_cliques, chemin %>
+<%# chemin => prefix_path(peut être une id) %>
