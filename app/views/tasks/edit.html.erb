@@ -1,0 +1,12 @@
+<h1>Vas y edit moi çà mec !</h1>
+<div>
+  <%= form_with model: @task do |f| %>
+    <%= f.label :title, "Titre?" %>
+    <%= f.text_field :title %>
+    <%= f.label :details, "Description?" %>
+    <%= f.text_field :details %>
+    <%= f.label :completed, "fait?" %>
+    <%= f.check_box :completed %>
+    <%= f.submit %>
+  <% end %>
+</div>

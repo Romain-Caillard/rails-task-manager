@@ -4,3 +4,10 @@
   <input type="checkbox" <%=@task.completed ? "checked" : ""%>>
   <label>Fait</label>
 </div>
+<div>
+  <h2><%= link_to "HOME", tasks_path %></h2>
+</div>
+<div>
+  <%= link_to "Delete", task_delete_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>

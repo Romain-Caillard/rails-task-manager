@@ -2,14 +2,27 @@
 
 <%@tasks.each do |task|%>
   <div>
-    <h2><%= link_to task.title, target_path(task) %></h2>
+    <h2><%= link_to task.title, task_path(task) %></h2>
+
     <div>
       <input type="checkbox" <%=task.completed ? "checked" : ""%>>
       <label>Fait</label>
     </div>
+
+    <div>
+      <h5><%= link_to "Edit this", task_edit_path(task) %></h2>
+    </div>
+
+    <div>
+      <%= link_to "Delete", task_delete_path(task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+
   </div>
+
 <%end%>
 
+<h2><%= link_to "Create a Task DUDE", tasks_new_path %></h2>
 
 <%# def task_path(task)
   '/tasks/:id'
